@@ -2,13 +2,16 @@ const Express = require("express");
 const Dotenv = require("dotenv").config();
 const cors = require("cors");
 const bodyParser = require("body-parser");
+
+const cookieParser = require("cookie-parser");
 const DB = require("./models/db");
 
 const consentRoute = require("./routes/cookieconsent");
 
 let app = Express();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(Express.json());
+app.use(Express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 app.use(cors());
 

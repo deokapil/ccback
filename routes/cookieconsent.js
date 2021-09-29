@@ -14,5 +14,6 @@ consentRouter.post(
   "/consent-config",
   operationsController.getUserConsentConfig
 );
+consentRouter.post("/set-consent", operationsController.setConsent);
 
 module.exports = consentRouter;
